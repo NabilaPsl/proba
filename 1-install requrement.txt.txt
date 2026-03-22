@@ -1,0 +1,14 @@
+1-install requrement.txt :
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+fastapi-users[sqlalchemy]
+python-dotenv
+2-change database.py nakhdmo b async :fastapi-users exige SQLAlchemy async. Le driver change de postgresql:// → postgresql+asyncpg://, et SessionLocal devient async_session_maker. Installe asyncpg avec pip install asyncpg.
+3-user_model.py: import  SQLAlchemyBaseUserTableUUID  to manage user
+4-new file auth_service for authentification jwt
+5-new folder db 
+6-user_schema.py : new import for pwd
+7-main.py — Branchement des 4 routers auth
+8-user_router.py — Routes protégées par JWT
